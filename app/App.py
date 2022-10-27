@@ -70,13 +70,14 @@ while True:
             reload_data=True
             )
             break
+            
+        data = grid_response['df']
+        selected = grid_response['selected_rows'] 
+        df = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
     except ValueError:
         print("Oops! Something went wrong, try again...")
 
 
-    data = grid_response['df']
-    selected = grid_response['selected_rows'] 
-    df = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
 
 # user options
 opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
