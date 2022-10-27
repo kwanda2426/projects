@@ -69,19 +69,3 @@ if load or st.session_state.load_state:
 opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
 st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
 
-
-if opt == 'Bar graph':
-    fig= px.bar(df, x=st.radio('X column:',df.columns), y = st.radio('Y column:',df.columns), title = 'Bar chart')
-        
-    st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
-    st.plotly_chart(fig)
-else:
-    #fig=px.pie(df, names=st.radio('Name:', df.columns), values =st.radio('Values: ',df.columns), title='Pie chart' )
-    #fig.update_traces(
-    #        textposition = "inside",
-    #        textinfo = "percent +label +text")
-    #fig.update_layout(
-    #title_font_size = 22,
-    #plot_bgcolor = "rgb(243,243,243)",
-    #paper_bgcolor= "rgb(243,243,243)")
-    #st.plotly_chart(fig)
