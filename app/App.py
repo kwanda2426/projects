@@ -47,16 +47,16 @@ if uploaded_file:
     
 load = st.button('load data')
 
-# initialize session state
-if "load_state" not in st.session_state:
-    st.session_state.load_state = False
+while True:
+    try:
+        # initialize session state
+        if "load_state" not in st.session_state:
+            st.session_state.load_state = False
 
 
 
-if load or st.session_state.load_state:
-    st.session_state.load_state = True
-    while True:
-        try:
+        if load or st.session_state.load_state:
+            st.session_state.load_state = True
             grid_response = AgGrid(
             df,
             gridOptions = gridOptions,
@@ -70,8 +70,8 @@ if load or st.session_state.load_state:
             reload_data=True
             )
             break
-        except ValueError:
-                print("Oops! Something went wrong, try again...")
+    except ValueError:
+        print("Oops! Something went wrong, try again...")
 
 
     data = grid_response['df']
