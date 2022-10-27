@@ -36,8 +36,9 @@ if uploaded_file:
                 break
             except ValueError:
                 print("Oop!  That was not a csv.  Check the file type and try again...")
+    
     grid_response = AgGrid(
-    data,
+    df,
     gridOptions=gridOptions,
     data_return_mode='AS_INPUT', 
     update_mode='MODEL_CHANGED', 
@@ -49,7 +50,7 @@ if uploaded_file:
     reload_data=True
 )
 
-data = grid_response['data']
+data = grid_response['df']
 selected = grid_response['selected_rows'] 
 df = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
 load = st.button('load data')
