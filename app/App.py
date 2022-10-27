@@ -8,9 +8,17 @@ import plotly.express as px
 import numpy as np
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
-st.set_page_config(page_title = 'Kwanda')
-st.title('Data Loader')
-st.subheader('Data file')
+st.set_page_config(
+     page_title="Ex-stream-ly Cool App",
+     page_icon="🧊",
+     layout="wide",
+     initial_sidebar_state="expanded",
+     menu_items={
+         'Get Help': 'https://www.extremelycoolapp.com/help',
+         'Report a bug': "https://www.extremelycoolapp.com/bug",
+         'About': "# This is a header. This is an *extremely* cool app!"
+     }
+ )
 
 original_list = ['csv', 'xlsx']
 
