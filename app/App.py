@@ -9,7 +9,7 @@ import numpy as np
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 st.set_page_config(
-     page_title="Ex-stream-ly Cool App",
+     page_title="Data Loader",
      page_icon="🧊",
      layout="wide",
      initial_sidebar_state="expanded",
@@ -35,7 +35,7 @@ if uploaded_file:
                 df = pd.read_csv(uploaded_file).astype(str)
                 break
             except ValueError:
-                print("Oop!  That was not a csv.  Check the file type and try again...")
+                print("Oops!  That was not a csv.  Check the file type and try again...")
 
     elif result == 'xlsx':
         while True:
@@ -43,7 +43,7 @@ if uploaded_file:
                 df = pd.read_excel(uploaded_file, engine = 'openpyxl').astype(str)
                 break
             except ValueError:
-                print("Oop!  That was not a csv.  Check the file type and try again...")
+                print("Oops!  That was not an excel file.  Check the file type and try again...")
     
 load = st.button('load data')
 
@@ -55,19 +55,24 @@ if "load_state" not in st.session_state:
 
 if load or st.session_state.load_state:
     st.session_state.load_state = True
+    while True:
+        try:
+            grid_response = AgGrid(
+            df,
+            gridOptions = gridOptions,
+            data_return_mode ='AS_INPUT', 
+            update_mode='MODEL_CHANGED', 
+            fit_columns_on_grid_load=False,
+            theme='blue', #Add theme color to the table
+            enable_enterprise_modules=True,
+            height=350, 
+            width='100%',
+            reload_data=True
+            )
+            break
+        except ValueError:
+                print("Oops! Something went wrong, try again...")
 
-    grid_response = AgGrid(
-    df,
-    gridOptions = gridOptions,
-    data_return_mode ='AS_INPUT', 
-    update_mode='MODEL_CHANGED', 
-    fit_columns_on_grid_load=False,
-    theme='blue', #Add theme color to the table
-    enable_enterprise_modules=True,
-    height=350, 
-    width='100%',
-    reload_data=True
-)
 
     data = grid_response['df']
     selected = grid_response['selected_rows'] 
