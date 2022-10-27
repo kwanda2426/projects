@@ -37,10 +37,21 @@ if uploaded_file:
             except ValueError:
                 print("Oop!  That was not a csv.  Check the file type and try again...")
     
+load = st.button('load data')
+
+# initialize session state
+if "load_state" not in st.session_state:
+    st.session_state.load_state = False
+
+
+
+if load or st.session_state.load_state:
+    st.session_state.load_state = True
+
     grid_response = AgGrid(
     df,
-    gridOptions=gridOptions,
-    data_return_mode='AS_INPUT', 
+    gridOptions = gridOptions,
+    data_return_mode ='AS_INPUT', 
     update_mode='MODEL_CHANGED', 
     fit_columns_on_grid_load=False,
     theme='blue', #Add theme color to the table
@@ -53,34 +64,24 @@ if uploaded_file:
 data = grid_response['df']
 selected = grid_response['selected_rows'] 
 df = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
-load = st.button('load data')
 
-# initialize session state
-if "load_state" not in st.session_state:
-    st.session_state.load_state = False
-
+# user options
+opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
+st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
 
 
-if load or st.session_state.load_state:
-    st.session_state.load_state = True
-
-    # user options
-    opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
-    st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
-
-
-    if opt == 'Bar graph':
-        fig= px.bar(df, x=st.radio('X column:',df.columns), y = st.radio('Y column:',df.columns), title = 'Bar chart')
+if opt == 'Bar graph':
+    fig= px.bar(df, x=st.radio('X column:',df.columns), y = st.radio('Y column:',df.columns), title = 'Bar chart')
         
-        st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
-        st.plotly_chart(fig)
-    else:
-        fig=px.pie(df, names=st.radio('Name:', df.columns), values =st.radio('Values: ',df.columns), title='Pie chart' )
-        fig.update_traces(
+    st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
+    st.plotly_chart(fig)
+else:
+    fig=px.pie(df, names=st.radio('Name:', df.columns), values =st.radio('Values: ',df.columns), title='Pie chart' )
+    fig.update_traces(
             textposition = "inside",
             textinfo = "percent +label +text")
-        fig.update_layout(
-        title_font_size = 22,
-        plot_bgcolor = "rgb(243,243,243)",
-        paper_bgcolor= "rgb(243,243,243)")
-        st.plotly_chart(fig)
+    fig.update_layout(
+    title_font_size = 22,
+    plot_bgcolor = "rgb(243,243,243)",
+    paper_bgcolor= "rgb(243,243,243)")
+    st.plotly_chart(fig)
