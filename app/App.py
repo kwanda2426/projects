@@ -61,9 +61,9 @@ if load or st.session_state.load_state:
     reload_data=True
 )
 
-data = grid_response['df']
-selected = grid_response['selected_rows'] 
-df = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
+    data = grid_response['df']
+    selected = grid_response['selected_rows'] 
+    df = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
 
 # user options
 opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
