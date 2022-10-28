@@ -10,7 +10,7 @@ from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 st.set_page_config(
      page_title="Data Loader",
-     page_icon="🧊",
+     page_icon= st.image(''),
      layout="wide",
      initial_sidebar_state="expanded",
      menu_items={
