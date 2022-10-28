@@ -30,20 +30,13 @@ if uploaded_file:
     st.markdown('---')
 
     if result == 'csv':
-        while True:
-            try:
-                df = pd.read_csv(uploaded_file).astype(str)
-                break
-            except ValueError:
-                print("Oops!  That was not a csv.  Check the file type and try again...")
+          
+          df = pd.read_csv(uploaded_file).astype(str)
 
     elif result == 'xlsx':
-        while True:
-            try:
-                df = pd.read_excel(uploaded_file, engine = 'openpyxl').astype(str)
-                break
-            except ValueError:
-                print("Oops!  That was not an excel file.  Check the file type and try again...")
+     
+          df = pd.read_excel(uploaded_file, engine = 'openpyxl').astype(str)
+
     
 load = st.button('load data')
 
@@ -61,8 +54,8 @@ while True:
             df,
             gridOptions = gridOptions,
             data_return_mode ='AS_INPUT', 
-            update_mode='MODEL_CHANGED', 
-            fit_columns_on_grid_load=False,
+            update_mode = 'MODEL_CHANGED', 
+            fit_columns_on_grid_load = False,
             theme='blue', #Add theme color to the table
             enable_enterprise_modules=True,
             height=350, 
