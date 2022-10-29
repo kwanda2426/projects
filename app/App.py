@@ -45,9 +45,11 @@ if uploaded_file:
             except ValueError:
                 print("Oops!  That was not an excel file.  Check the file type and try again...")
     
-load = st.button('load data')
 
 while True:
+
+    load = st.button('load data')
+    
     try:
         # initialize session state
         if "load_state" not in st.session_state:
@@ -71,9 +73,9 @@ while True:
             )
             break
             
-        data = grid_response['df']
-        selected = grid_response['selected_rows'] 
-        df = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
+            data = grid_response['df']
+            selected = grid_response['selected_rows'] 
+            df = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
     except ValueError:
         print("Oops! Something went wrong, try again...")
 
