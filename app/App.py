@@ -10,7 +10,7 @@ from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 st.set_page_config(
      page_title="Data Loader",
-     page_icon= st.image(''),
+     page_icon= 'Final_logo.jpg',
      layout="wide",
      initial_sidebar_state="expanded",
      menu_items={
@@ -38,10 +38,9 @@ if uploaded_file:
           df = pd.read_excel(uploaded_file, engine = 'openpyxl').astype(str)
 
     
+load = st.button('load data')
 
 while True:
-
-    load = st.button('load data')
     
     try:
         # initialize session state
