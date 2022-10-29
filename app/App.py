@@ -10,7 +10,7 @@ from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 st.set_page_config(
      page_title="Data Loader",
-     page_icon= 'Final_logo.jpg',
+     page_icon= 'Capture.PNG',
      layout="wide",
      initial_sidebar_state="expanded",
      menu_items={
@@ -40,36 +40,17 @@ if uploaded_file:
     
 load = st.button('load data')
 
-while True:
-    
-    try:
-        # initialize session state
-        if "load_state" not in st.session_state:
-            st.session_state.load_state = False
+# initialize session state
+if "load_state" not in st.session_state:
+    st.session_state.load_state = False
 
 
 
-        if load or st.session_state.load_state:
-            st.session_state.load_state = True
-            grid_response = AgGrid(
-            df,
-            gridOptions = gridOptions,
-            data_return_mode ='AS_INPUT', 
-            update_mode = 'MODEL_CHANGED', 
-            fit_columns_on_grid_load = False,
-            theme='blue', #Add theme color to the table
-            enable_enterprise_modules=True,
-            height=350, 
-            width='100%',
-            reload_data=True
-            )
-            break
-            
-            data = grid_response['df']
-            selected = grid_response['selected_rows'] 
-            df = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
-    except ValueError:
-        print("Oops! Something went wrong, try again...")
+if load or st.session_state.load_state:
+    st.session_state.load_state = True
+        
+    data = AgGrid(df)
+
 
 
 
@@ -77,3 +58,24 @@ while True:
 opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
 st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
 
+import pandas as pd
+import streamlit as st
+
+# Cache the dataframe so it's only loaded once
+@st.experimental_memo
+def load_data():
+    return pd.DataFrame(
+        {
+            "first column": [1, 2, 3, 4],
+            "second column": [10, 20, 30, 40],
+        }
+    )
+
+# Boolean to resize the dataframe, stored as a session state variable
+st.checkbox("Use container width", value=False, key="use_container_width")
+
+df = load_data()
+
+# Display the dataframe and allow the user to stretch the dataframe
+# across the full width of the container, based on the checkbox value
+st.dataframe(df, use_container_width=st.session_state.use_container_width)
