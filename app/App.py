@@ -20,6 +20,8 @@ st.set_page_config(
      }
  )
 
+st.image('Final_logo.jpg')
+
 original_list = ['csv', 'xlsx']
 
 result = st.selectbox('Select which file to upload:', original_list)
