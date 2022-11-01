@@ -63,16 +63,19 @@ if load or st.session_state.load_state:
 
 
     # user options
-opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
-st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
+#opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
+#st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
 
-transform = st.button('Transform data')
+#transform = st.button('Transform data')
 
-if transform:
+gd = GridOptionsBuilder.from_dataframe(df)
+gd.configure_pagination(enabled = True)
+gd.configure_default_column(editable = True, groupable = True)
+gridoptions = gd.build()
+AgGrid(df, gridOptions = gridoptions, data_return_mode='AS_INPUT')
 
-    dd = df['value'].astype(int)*2
 
-    dd = st.dataframe(dd)
+
 
 
 
