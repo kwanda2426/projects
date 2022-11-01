@@ -59,6 +59,26 @@ if load or st.session_state.load_state:
     
     data = st.dataframe(df)
 
+    gd = GridOptionsBuilder.from_dataframe(df)
+    gd.configure_pagination(enabled = True)
+    gd.configure_side_bar() #Add a sidebar
+    gd.configure_selection('multiple', use_checkbox=True, groupSelectsChildren="Group checkbox select children")
+    gd.configure_default_column(editable = True, groupable = True)
+    gridoptions = gd.build()
+    grid_response= AgGrid(data = df, 
+                            gridOptions = gridoptions, 
+                            data_return_mode='AS_INPUT',
+                            fit_columns_on_grid_load = True,
+                            height=350, 
+                            width='100%',
+                            )
+
+    data = grid_response['data']
+    selected = grid_response['selected_rows'] 
+    dd = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
+    cols = dd.columns[1:]
+    st.dataframe(dd[cols])
+
 
 
 
@@ -68,25 +88,7 @@ if load or st.session_state.load_state:
 
 #transform = st.button('Transform data')
 
-gd = GridOptionsBuilder.from_dataframe(df)
-gd.configure_pagination(enabled = True)
-gd.configure_side_bar() #Add a sidebar
-gd.configure_selection('multiple', use_checkbox=True, groupSelectsChildren="Group checkbox select children")
-gd.configure_default_column(editable = True, groupable = True)
-gridoptions = gd.build()
-grid_response= AgGrid(data = df, 
-                        gridOptions = gridoptions, 
-                        data_return_mode='AS_INPUT',
-                        fit_columns_on_grid_load = True,
-                        height=350, 
-                        width='100%',
-                        )
 
-data = grid_response['data']
-selected = grid_response['selected_rows'] 
-dd = pd.DataFrame(selected) #Pass the selected rows to a new dataframe df
-cols = dd.columns[1:]
-st.dataframe(dd[cols])
 
 
 
