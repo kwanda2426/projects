@@ -63,5 +63,5 @@ def main():
     opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
     st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
 
-if __main__ = '__main__':
+if __name__ == '__main__':
     main()
