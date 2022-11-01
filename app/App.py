@@ -8,54 +8,60 @@ import plotly.express as px
 import numpy as np
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
-st.set_page_config(
-     page_title="Data Loader",
-     page_icon= 'Capture.PNG',
-     layout="wide",
-     initial_sidebar_state="expanded",
-     menu_items={
-         'Get Help': 'https://www.extremelycoolapp.com/help',
-         'Report a bug': "https://www.extremelycoolapp.com/bug",
-         'About': "# This is a header. This is an *extremely* cool app!"
-     }
- )
 
-st.image('Final_logo.jpg')
+def main():
 
-original_list = ['csv', 'xlsx']
+    st.set_page_config(
+        page_title="Data Loader",
+        page_icon= 'Capture.PNG',
+        layout="wide",
+        initial_sidebar_state="expanded",
+        menu_items={
+            'Get Help': 'https://www.extremelycoolapp.com/help',
+            'Report a bug': "https://www.extremelycoolapp.com/bug",
+            'About': "# This is a header. This is an *extremely* cool app!"
+        }
+    )
 
-result = st.selectbox('Select which file to upload:', original_list)
+    st.image('Final_logo.jpg')
 
-uploaded_file = st.file_uploader('Choose a {} file'.format(result), type = result)
+    original_list = ['csv', 'xlsx']
 
-if uploaded_file:
-    st.markdown('---')
+    result = st.selectbox('Select which file to upload:', original_list)
 
-    if result == 'csv':
+    uploaded_file = st.file_uploader('Choose a {} file'.format(result), type = result)
+
+    if uploaded_file:
+        st.markdown('---')
+
+        if result == 'csv':
           
-          df = pd.read_csv(uploaded_file).astype(str)
+            df = pd.read_csv(uploaded_file).astype(str)
 
-    elif result == 'xlsx':
+        elif result == 'xlsx':
      
-          df = pd.read_excel(uploaded_file, engine = 'openpyxl').astype(str)
+            df = pd.read_excel(uploaded_file, engine = 'openpyxl').astype(str)
 
     
-load = st.button('load data')
+    load = st.button('load data')
 
-# initialize session state
-if "load_state" not in st.session_state:
-    st.session_state.load_state = False
+    # initialize session state
+    if "load_state" not in st.session_state:
+        st.session_state.load_state = False
 
 
 
-if load or st.session_state.load_state:
-    st.session_state.load_state = True
+    if load or st.session_state.load_state:
+        st.session_state.load_state = True
         
-    data = st.dataframe(df)
+        data = st.dataframe(df)
 
 
 
 
-# user options
-opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
-st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
+    # user options
+    opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
+    st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
+
+if __main__ = '__main__':
+    main()
