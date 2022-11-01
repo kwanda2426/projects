@@ -57,12 +57,12 @@ if load or st.session_state.load_state:
     st.session_state.load_state = True
         
     
-    data = st.dataframe(df)
+    #data = st.dataframe(df)
 
     gd = GridOptionsBuilder.from_dataframe(df)
     gd.configure_pagination(enabled = True)
     gd.configure_side_bar() #Add a sidebar
-    gd.configure_selection('multiple', use_checkbox=True, groupSelectsChildren="Group checkbox select children")
+    gd.configure_selection('multiple', use_checkbox=True)
     gd.configure_default_column(editable = True, groupable = True)
     gridoptions = gd.build()
     grid_response= AgGrid(data = df, 
