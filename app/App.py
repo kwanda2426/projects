@@ -51,7 +51,7 @@ if "load_state" not in st.session_state:
 if load or st.session_state.load_state:
     st.session_state.load_state = True
         
-    data = AgGrid(df)
+    data = st.dataframe(df)
 
 
 
@@ -59,25 +59,3 @@ if load or st.session_state.load_state:
 # user options
 opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
 st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
-
-import pandas as pd
-import streamlit as st
-
-# Cache the dataframe so it's only loaded once
-@st.experimental_memo
-def load_data():
-    return pd.DataFrame(
-        {
-            "first column": [1, 2, 3, 4],
-            "second column": [10, 20, 30, 40],
-        }
-    )
-
-# Boolean to resize the dataframe, stored as a session state variable
-st.checkbox("Use container width", value=False, key="use_container_width")
-
-df = load_data()
-
-# Display the dataframe and allow the user to stretch the dataframe
-# across the full width of the container, based on the checkbox value
-st.dataframe(df, use_container_width=st.session_state.use_container_width)
