@@ -10,10 +10,6 @@ from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 
 
-
-
-
-
 st.set_page_config(
         page_title="Data Loader",
         page_icon= 'Capture.PNG',
@@ -25,6 +21,9 @@ st.set_page_config(
             'About': "# This is a header. This is an *extremely* cool app!"
         }
     )
+
+ 
+
 
 st.image('Final_logo.jpg')
 
@@ -69,6 +68,11 @@ st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</styl
 
 transform = st.button('Transform data')
 
+if transform:
+
+    dd = df['value'].astype(int)*2
+
+    dd = st.dataframe(dd)
 
 
 
