@@ -9,9 +9,12 @@ import numpy as np
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 
-def main():
 
-    st.set_page_config(
+
+
+
+
+st.set_page_config(
         page_title="Data Loader",
         page_icon= 'Capture.PNG',
         layout="wide",
@@ -23,45 +26,52 @@ def main():
         }
     )
 
-    st.image('Final_logo.jpg')
+st.image('Final_logo.jpg')
 
-    original_list = ['csv', 'xlsx']
+original_list = ['csv', 'xlsx']
 
-    result = st.selectbox('Select which file to upload:', original_list)
+result = st.selectbox('Select which file to upload:', original_list)
 
-    uploaded_file = st.file_uploader('Choose a {} file'.format(result), type = result)
+uploaded_file = st.file_uploader('Choose a {} file'.format(result), type = result)
 
-    if uploaded_file:
-        st.markdown('---')
+if uploaded_file:
+    st.markdown('---')
 
-        if result == 'csv':
+    if result == 'csv':
           
-            df = pd.read_csv(uploaded_file).astype(str)
+        df = pd.read_csv(uploaded_file).astype(str)
 
-        elif result == 'xlsx':
+    elif result == 'xlsx':
      
-            df = pd.read_excel(uploaded_file, engine = 'openpyxl').astype(str)
+        df = pd.read_excel(uploaded_file, engine = 'openpyxl').astype(str)
 
     
-    load = st.button('load data')
+load = st.button('load data')
 
-    # initialize session state
-    if "load_state" not in st.session_state:
-        st.session_state.load_state = False
+# initialize session state
+if "load_state" not in st.session_state:
+    st.session_state.load_state = False
 
 
 
-    if load or st.session_state.load_state:
-        st.session_state.load_state = True
+if load or st.session_state.load_state:
+    st.session_state.load_state = True
         
-        data = st.dataframe(df)
+    
+    data = st.dataframe(df)
 
 
 
 
     # user options
-    opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
-    st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
+opt = st.radio('Plot type :',['Bar graph', 'Pie chart'] )
+st.write('<style>div.row-widget.widget.stradio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
 
-if __name__ == '__main__':
-    main()
+transform = st.button('Transform data')
+
+
+
+
+
+
+
