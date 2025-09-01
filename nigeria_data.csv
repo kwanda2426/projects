@@ -1,0 +1,223 @@
+state,year,month,item,total
+Abia,2018,May,All Items,262.3
+Abia,2018,May,Food,281.8
+Abia,2019,Apr,All Items,284.6
+Abia,2019,Apr,Food,309.8
+Abia,2019,May,All Items,288.3
+Abia,2019,May,Food,312.5
+Adamawa,2018,May,All Items,249.9
+Adamawa,2018,May,Food,271.1
+Adamawa,2019,Apr,All Items,278.8
+Adamawa,2019,Apr,Food,306.3
+Adamawa,2019,May,All Items,281.4
+Adamawa,2019,May,Food,312.4
+Akwa Ibom,2018,May,All Items,254
+Akwa Ibom,2018,May,Food,274.3
+Akwa Ibom,2019,Apr,All Items,279.2
+Akwa Ibom,2019,Apr,Food,305.8
+Akwa Ibom,2019,May,All Items,282.4
+Akwa Ibom,2019,May,Food,309.7
+Anambra,2018,May,All Items,258.2
+Anambra,2018,May,Food,273.4
+Anambra,2019,Apr,All Items,287.7
+Anambra,2019,Apr,Food,309.6
+Anambra,2019,May,All Items,291.6
+Anambra,2019,May,Food,314.4
+Bauchi,2018,May,All Items,272.1
+Bauchi,2018,May,Food,258.2
+Bauchi,2019,Apr,All Items,307.5
+Bauchi,2019,Apr,Food,287.7
+Bauchi,2019,May,All Items,312.9
+Bauchi,2019,May,Food,291.6
+Bayelsa,2018,May,All Items,265.2
+Bayelsa,2018,May,Food,287.6
+Bayelsa,2019,Apr,All Items,288.2
+Bayelsa,2019,Apr,Food,314.7
+Bayelsa,2019,May,All Items,292.1
+Bayelsa,2019,May,Food,320.6
+Benue,2018,May,All Items,255.6
+Benue,2018,May,Food,274.9
+Benue,2019,Apr,All Items,283
+Benue,2019,Apr,Food,312.7
+Benue,2019,May,All Items,284.3
+Benue,2019,May,Food,313.5
+Borno,2018,May,All Items,252.7
+Borno,2018,May,Food,271
+Borno,2019,Apr,All Items,277
+Borno,2019,Apr,Food,304.5
+Borno,2019,May,All Items,279.6
+Borno,2019,May,Food,310.6
+Cross River,2018,May,All Items,247.5
+Cross River,2018,May,Food,273.6
+Cross River,2019,Apr,All Items,269.4
+Cross River,2019,Apr,Food,306.8
+Cross River,2019,May,All Items,271.4
+Cross River,2019,May,Food,310.4
+Delta,2018,May,All Items,251
+Delta,2018,May,Food,279.4
+Delta,2019,Apr,All Items,273.5
+Delta,2019,Apr,Food,312.6
+Delta,2019,May,All Items,276.9
+Delta,2019,May,Food,315.8
+Ebonyi,2018,May,All Items,256
+Ebonyi,2018,May,Food,273
+Ebonyi,2019,Apr,All Items,284
+Ebonyi,2019,Apr,Food,307.3
+Ebonyi,2019,May,All Items,287.6
+Ebonyi,2019,May,Food,311.9
+Edo,2018,May,All Items,265.4
+Edo,2018,May,Food,274.9
+Edo,2019,Apr,All Items,291.4
+Edo,2019,Apr,Food,309.2
+Edo,2019,May,All Items,294.9
+Edo,2019,May,Food,313.8
+Ekiti,2018,May,All Items,240.2
+Ekiti,2018,May,Food,268.2
+Ekiti,2019,Apr,All Items,268
+Ekiti,2019,Apr,Food,304.6
+Ekiti,2019,May,All Items,270.2
+Ekiti,2019,May,Food,307.9
+Enugu,2018,May,All Items,247.2
+Enugu,2018,May,Food,273.8
+Enugu,2019,Apr,All Items,274
+Enugu,2019,Apr,Food,307.6
+Enugu,2019,May,All Items,276.9
+Enugu,2019,May,Food,312.5
+Federal Capital Territory,2018,May,All Items,256.2
+Federal Capital Territory,2018,May,Food,268.8
+Federal Capital Territory,2019,Apr,All Items,282.9
+Federal Capital Territory,2019,Apr,Food,302.6
+Federal Capital Territory,2019,May,All Items,285.6
+Federal Capital Territory,2019,May,Food,309.2
+Gombe,2018,May,All Items,252.6
+Gombe,2018,May,Food,264.8
+Gombe,2019,Apr,All Items,282.5
+Gombe,2019,Apr,Food,302.7
+Gombe,2019,May,All Items,287.2
+Gombe,2019,May,Food,309.7
+Imo,2018,May,All Items,241
+Imo,2018,May,Food,272.3
+Imo,2019,Apr,All Items,263.3
+Imo,2019,Apr,Food,303.7
+Imo,2019,May,All Items,266.4
+Imo,2019,May,Food,307.8
+Jigawa,2018,May,All Items,256
+Jigawa,2018,May,Food,270.3
+Jigawa,2019,Apr,All Items,283.5
+Jigawa,2019,Apr,Food,301.2
+Jigawa,2019,May,All Items,287.4
+Jigawa,2019,May,Food,306.7
+Kaduna,2018,May,All Items,261.7
+Kaduna,2018,May,Food,274.9
+Kaduna,2019,Apr,All Items,293
+Kaduna,2019,Apr,Food,314.7
+Kaduna,2019,May,All Items,297.7
+Kaduna,2019,May,Food,321.8
+Kano,2018,May,All Items,258.8
+Kano,2018,May,Food,272.1
+Kano,2019,Apr,All Items,288.3
+Kano,2019,Apr,Food,308
+Kano,2019,May,All Items,293.1
+Kano,2019,May,Food,315.3
+Katsina,2018,May,All Items,240.3
+Katsina,2018,May,Food,272
+Katsina,2019,Apr,All Items,264.7
+Katsina,2019,Apr,Food,304.7
+Katsina,2019,May,All Items,267.4
+Katsina,2019,May,Food,309.2
+Kebbi,2018,May,All Items,261
+Kebbi,2018,May,Food,267.7
+Kebbi,2019,Apr,All Items,297.7
+Kebbi,2019,Apr,Food,312.5
+Kebbi,2019,May,All Items,302.1
+Kebbi,2019,May,Food,318.2
+Kogi,2018,May,All Items,267.4
+Kogi,2018,May,Food,276.2
+Kogi,2019,Apr,All Items,295
+Kogi,2019,Apr,Food,306.6
+Kogi,2019,May,All Items,296.8
+Kogi,2019,May,Food,308.7
+Kwara,2018,May,All Items,324.9
+Kwara,2018,May,Food,279.5
+Kwara,2019,Apr,All Items,352.5
+Kwara,2019,Apr,Food,314.2
+Kwara,2019,May,All Items,352.4
+Kwara,2019,May,Food,313.1
+Lagos,2018,May,All Items,267.2
+Lagos,2018,May,Food,278.4
+Lagos,2019,Apr,All Items,297.1
+Lagos,2019,Apr,Food,316.2
+Lagos,2019,May,All Items,299.4
+Lagos,2019,May,Food,319.1
+Nasarawa,2018,May,All Items,260.4
+Nasarawa,2018,May,Food,274.8
+Nasarawa,2019,Apr,All Items,287.7
+Nasarawa,2019,Apr,Food,309.7
+Nasarawa,2019,May,All Items,292.2
+Nasarawa,2019,May,Food,316.3
+Niger,2018,May,All Items,260.6
+Niger,2018,May,Food,269
+Niger,2019,Apr,All Items,290.7
+Niger,2019,Apr,Food,306.6
+Niger,2019,May,All Items,295.5
+Niger,2019,May,Food,313.4
+Ogun,2018,May,All Items,275.2
+Ogun,2018,May,Food,279.5
+Ogun,2019,Apr,All Items,302.7
+Ogun,2019,Apr,Food,314.5
+Ogun,2019,May,All Items,307
+Ogun,2019,May,Food,320.4
+Ondo,2018,May,All Items,259.8
+Ondo,2018,May,Food,273.1
+Ondo,2019,Apr,All Items,290
+Ondo,2019,Apr,Food,311.6
+Ondo,2019,May,All Items,294.6
+Ondo,2019,May,Food,318.1
+Osun,2018,May,All Items,259.9
+Osun,2018,May,Food,274.1
+Osun,2019,Apr,All Items,284.6
+Osun,2019,Apr,Food,304.6
+Osun,2019,May,All Items,287.6
+Osun,2019,May,Food,308.7
+Oyo,2018,May,All Items,266.8
+Oyo,2018,May,Food,274.7
+Oyo,2019,Apr,All Items,296.1
+Oyo,2019,Apr,Food,312.6
+Oyo,2019,May,All Items,298.9
+Oyo,2019,May,Food,316.5
+Plateau,2018,May,All Items,262.7
+Plateau,2018,May,Food,273.7
+Plateau,2019,Apr,All Items,287.9
+Plateau,2019,Apr,Food,303.6
+Plateau,2019,May,All Items,291.5
+Plateau,2019,May,Food,308.4
+Rivers,2018,May,All Items,254.7
+Rivers,2018,May,Food,277.7
+Rivers,2019,Apr,All Items,280.5
+Rivers,2019,Apr,Food,307.9
+Rivers,2019,May,All Items,282.8
+Rivers,2019,May,Food,310.3
+Sokoto,2018,May,All Items,257.2
+Sokoto,2018,May,Food,271.6
+Sokoto,2019,Apr,All Items,283.8
+Sokoto,2019,Apr,Food,304.7
+Sokoto,2019,May,All Items,287.7
+Sokoto,2019,May,Food,311.2
+Taraba,2018,May,All Items,251.3
+Taraba,2018,May,Food,275.7
+Taraba,2019,Apr,All Items,278.7
+Taraba,2019,Apr,Food,308
+Taraba,2019,May,All Items,281.8
+Taraba,2019,May,Food,312.3
+Yobe,2018,May,All Items,259.9
+Yobe,2018,May,Food,274
+Yobe,2019,Apr,All Items,288.7
+Yobe,2019,Apr,Food,307.9
+Yobe,2019,May,All Items,292.4
+Yobe,2019,May,Food,312.7
+Zamfara,2018,May,All Items,256.6
+Zamfara,2018,May,Food,270.1
+Zamfara,2019,Apr,All Items,288.3
+Zamfara,2019,Apr,Food,309.2
+Zamfara,2019,May,All Items,291.4
+Zamfara,2019,May,Food,313.2
