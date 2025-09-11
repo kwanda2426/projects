@@ -1,3 +1,4 @@
+pip install --upgrade pip
 import streamlit as st
 import pandas as pd
 import joblib
@@ -66,3 +67,4 @@ if st.button("Predict Drug"):
     features = np.array([[age, sex_enc, bp_enc, chol_enc, na_to_k]])
     prediction = dt_model.predict(features)[0]
     st.success(f"Predicted Drug: {reverse_drug_dict[prediction]}")
+
