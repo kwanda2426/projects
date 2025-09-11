@@ -1,7 +1,8 @@
-streamlit
-pandas
-numpy
-scikit-learn
-joblib
+pip==25.2 
+scikit-learn==1.7.2 
+joblib==1.5.2 
 pickle
 os
+streamlit==1.49.0 
+pandas==2.3.2 
+numpy==2.3.3 
