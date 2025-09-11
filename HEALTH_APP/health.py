@@ -1,11 +1,13 @@
-pip install --upgrade pip
 import streamlit as st
 import pandas as pd
 import joblib
 import numpy as np
+import os
 
+base_dir = os.path.dirname(os.path.bspath(__file__))
+model_path = os.path.join(base_dir, "decision_tree_model.pkl")
 # Load trained model
-dt_model = joblib.load("decision_tree_model.pkl")
+dt_model = joblib.load(model_path)
 
 # Encoding dictionaries
 gender_dict = {'M': 1, 'F': 0}
@@ -67,4 +69,5 @@ if st.button("Predict Drug"):
     features = np.array([[age, sex_enc, bp_enc, chol_enc, na_to_k]])
     prediction = dt_model.predict(features)[0]
     st.success(f"Predicted Drug: {reverse_drug_dict[prediction]}")
+
 
